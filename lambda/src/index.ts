@@ -15,19 +15,8 @@ import {
     Response
 } from 'ask-sdk-model';
 
+import { LaunchRequestHandler } from './code/intents/Launch';
 
-const LaunchRequestHandler: RequestHandler = {
-    canHandle(handlerInput: HandlerInput) {
-        return getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
-    },
-    handle(handlerInput: HandlerInput) {
-        const speakOutput = 'Testing Alexa is really dumb';
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
 const HelloWorldIntentHandler: RequestHandler = {
     canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
