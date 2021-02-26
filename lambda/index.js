@@ -6,18 +6,7 @@ exports.handler = void 0;
 // session persistence, api calls, and more.
 // const Alexa = require('ask-sdk-core');
 const ask_sdk_core_1 = require("ask-sdk-core");
-const LaunchRequestHandler = {
-    canHandle(handlerInput) {
-        return ask_sdk_core_1.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
-    },
-    handle(handlerInput) {
-        const speakOutput = 'Testing Alexa is really dumb';
-        return handlerInput.responseBuilder
-            .speak(speakOutput)
-            .reprompt(speakOutput)
-            .getResponse();
-    }
-};
+const Launch_1 = require("./src/intents/Launch");
 const HelloWorldIntentHandler = {
     canHandle(handlerInput) {
         return ask_sdk_core_1.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
@@ -103,6 +92,6 @@ const ErrorHandler = {
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
 // defined are included below. The order matters - they're processed top to bottom.
 exports.handler = ask_sdk_core_1.SkillBuilders.custom()
-    .addRequestHandlers(LaunchRequestHandler, HelloWorldIntentHandler, HelpIntentHandler, CancelAndStopIntentHandler, SessionEndedRequestHandler, IntentReflectorHandler)
+    .addRequestHandlers(Launch_1.LaunchRequestHandler, HelloWorldIntentHandler, HelpIntentHandler, CancelAndStopIntentHandler, SessionEndedRequestHandler, IntentReflectorHandler)
     .addErrorHandlers(ErrorHandler)
     .lambda();

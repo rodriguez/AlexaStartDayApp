@@ -7,7 +7,7 @@
             "dom"
         ],
         "moduleResolution": "node",
-        "rootDir": "src",
+        "rootDir": "ts",
         "outDir": "./",
         "sourceMap": false,
         "allowJs": false,

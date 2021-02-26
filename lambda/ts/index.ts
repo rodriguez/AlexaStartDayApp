@@ -15,7 +15,7 @@ import {
     Response
 } from 'ask-sdk-model';
 
-import { LaunchRequestHandler } from './code/intents/Launch';
+import { LaunchRequestHandler } from './src/intents/Launch';
 
 const HelloWorldIntentHandler: RequestHandler = {
     canHandle(handlerInput: HandlerInput) {

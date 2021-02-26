@@ -9,7 +9,7 @@ export const LaunchRequestHandler: RequestHandler = {
         return getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput: HandlerInput) {
-        const speakOutput = 'Good Morning Andres. What would you like me to do today?';
+        const speakOutput = 'Good Morning Andres. Go fuck yourself.';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
