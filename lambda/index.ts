@@ -11,16 +11,16 @@ import {
     getIntentName,
     LambdaHandler
   } from 'ask-sdk-core';
-  import {
-    Response,
-    SessionEndedRequest,
-  } from 'ask-sdk-model';
+import {
+    Response
+} from 'ask-sdk-model';
 
-const LaunchRequestHandler = {
-    canHandle(handlerInput) {
+
+const LaunchRequestHandler: RequestHandler = {
+    canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
-    handle(handlerInput) {
+    handle(handlerInput: HandlerInput) {
         const speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -28,12 +28,12 @@ const LaunchRequestHandler = {
             .getResponse();
     }
 };
-const HelloWorldIntentHandler = {
-    canHandle(handlerInput) {
+const HelloWorldIntentHandler: RequestHandler = {
+    canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && getIntentName(handlerInput.requestEnvelope) === 'HelloWorldIntent';
     },
-    handle(handlerInput) {
+    handle(handlerInput: HandlerInput) {
         const speakOutput = 'Hello World!';
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -41,12 +41,12 @@ const HelloWorldIntentHandler = {
             .getResponse();
     }
 };
-const HelpIntentHandler = {
-    canHandle(handlerInput) {
+const HelpIntentHandler: RequestHandler = {
+    canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
-    handle(handlerInput) {
+    handle(handlerInput: HandlerInput) {
         const speakOutput = 'You can say hello to me! How can I help?';
 
         return handlerInput.responseBuilder
@@ -55,24 +55,24 @@ const HelpIntentHandler = {
             .getResponse();
     }
 };
-const CancelAndStopIntentHandler = {
-    canHandle(handlerInput) {
+const CancelAndStopIntentHandler: RequestHandler = {
+    canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
             && (getIntentName(handlerInput.requestEnvelope) === 'AMAZON.CancelIntent'
                 || getIntentName(handlerInput.requestEnvelope) === 'AMAZON.StopIntent');
     },
-    handle(handlerInput) {
+    handle(handlerInput: HandlerInput) {
         const speakOutput = 'Goodbye!';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .getResponse();
     }
 };
-const SessionEndedRequestHandler = {
-    canHandle(handlerInput) {
+const SessionEndedRequestHandler: RequestHandler = {
+    canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'SessionEndedRequest';
     },
-    handle(handlerInput) {
+    handle(handlerInput: HandlerInput) {
         // Any cleanup logic goes here.
         return handlerInput.responseBuilder.getResponse();
     }
@@ -82,11 +82,11 @@ const SessionEndedRequestHandler = {
 // It will simply repeat the intent the user said. You can create custom handlers
 // for your intents by defining them above, then also adding them to the request
 // handler chain below.
-const IntentReflectorHandler = {
-    canHandle(handlerInput) {
+const IntentReflectorHandler: RequestHandler = {
+    canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'IntentRequest';
     },
-    handle(handlerInput) {
+    handle(handlerInput: HandlerInput) {
         const intentName = getIntentName(handlerInput.requestEnvelope);
         const speakOutput = `You just triggered ${intentName}`;
 
@@ -100,11 +100,11 @@ const IntentReflectorHandler = {
 // Generic error handling to capture any syntax or routing errors. If you receive an error
 // stating the request handler chain is not found, you have not implemented a handler for
 // the intent being invoked or included it in the skill builder below.
-const ErrorHandler = {
+const ErrorHandler: ErrorHandler = {
     canHandle() {
         return true;
     },
-    handle(handlerInput, error) {
+    handle(handlerInput: HandlerInput, error: Error): Response | Promise<Response> {
         console.log(`~~~~ Error handled: ${error.stack}`);
         const speakOutput = `Sorry, I had trouble doing what you asked. Please try again.`;
 
