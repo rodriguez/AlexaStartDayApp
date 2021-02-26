@@ -7,8 +7,8 @@
             "dom"
         ],
         "moduleResolution": "node",
-        "rootDir": "./",
-        "outDir": "dist",
+        "rootDir": "src",
+        "outDir": "./",
         "sourceMap": false,
         "allowJs": false,
         "noImplicitAny": true,

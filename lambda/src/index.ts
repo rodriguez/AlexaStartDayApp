@@ -21,7 +21,7 @@ const LaunchRequestHandler: RequestHandler = {
         return getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput: HandlerInput) {
-        const speakOutput = 'Welcome, you can say Hello or Help. Which would you like to try?';
+        const speakOutput = 'Testing Alexa is really dumb';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
@@ -47,7 +47,7 @@ const HelpIntentHandler: RequestHandler = {
             && getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput: HandlerInput) {
-        const speakOutput = 'You can say hello to me! How can I help?';
+        const speakOutput = 'Help Handler';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
