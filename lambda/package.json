@@ -6,10 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "rimraf": "./node_modules/rimraf/bin.js",
-    "clean": "rimraf js/",
-    "compile": "npm run clean && tsc -p ./",
-    "pushall": "git remote | xargs -L1 -I R git push R master"
+    "pushall": "git push origin master && git push github master"
   },
   "author": "Amazon Alexa",
   "license": "ISC",
