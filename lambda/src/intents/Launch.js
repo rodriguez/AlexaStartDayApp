@@ -7,7 +7,7 @@ exports.LaunchRequestHandler = {
         return ask_sdk_core_1.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Good Morning Andres. Go fuck yourself.';
+        const speakOutput = 'Good Morning Andres. Subarashi Ningen.';
         return handlerInput.responseBuilder
             .speak(speakOutput)
             .reprompt(speakOutput)
