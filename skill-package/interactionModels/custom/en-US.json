@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "test app",
+      "invocationName": "start my day",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
