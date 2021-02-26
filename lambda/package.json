@@ -8,6 +8,7 @@
     "clean": "if exist src rmdir src /q /s",
     "compile": "tsc",
     "build": "npm run clean && npm run compile",
+    "addall": "npm run build && cd .. && git add . && cd lambda",
     "pushall": "git push origin master && git push github master"
   },
   "author": "Amazon Alexa",
