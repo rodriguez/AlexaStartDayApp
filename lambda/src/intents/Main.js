@@ -5,7 +5,7 @@ const ask_sdk_core_1 = require("ask-sdk-core");
 const axios_1 = require("axios");
 exports.MainRequestHandler = {
     canHandle(handlerInput) {
-        return ask_sdk_core_1.getRequestType(handlerInput.requestEnvelope) === 'MainRequest';
+        return ask_sdk_core_1.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' && ask_sdk_core_1.getIntentName(handlerInput.requestEnvelope) === 'Main';
     },
     handle(handlerInput) {
         let speakOutput = 'Here\'s what you can do: ';

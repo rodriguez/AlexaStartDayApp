@@ -2,13 +2,14 @@ import {
     HandlerInput,
     RequestHandler,
     getRequestType,
+    getIntentName,
 } from 'ask-sdk-core';
 
 import axios, { AxiosResponse } from 'axios';
 
 export const MainRequestHandler: RequestHandler = {
     canHandle(handlerInput: HandlerInput) {
-        return getRequestType(handlerInput.requestEnvelope) === 'MainRequest';
+        return getRequestType(handlerInput.requestEnvelope) === 'IntentRequest' && getIntentName(handlerInput.requestEnvelope) === 'Main';
     },
     handle(handlerInput: HandlerInput) {
         let speakOutput = 'Here\'s what you can do: ';

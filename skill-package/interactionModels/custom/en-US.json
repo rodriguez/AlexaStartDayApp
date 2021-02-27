@@ -16,20 +16,19 @@
           "samples": []
         },
         {
-          "name": "MainIntent",
-          "slots": [],
-          "samples": [
-            "what can I do?"
-          ]
-        },
-        
-        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
+        },
+        {
+          "name": "Main",
+          "slots": [],
+          "samples": [
+            "main"
+          ]
         }
       ],
       "types": []
     }
   },
-  "version": "1"
+  "version": "6"
 }
