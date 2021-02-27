@@ -1,9 +1,9 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Main = void 0;
+exports.MainRequestHandler = void 0;
 const ask_sdk_core_1 = require("ask-sdk-core");
 const axios_1 = require("axios");
-exports.Main = {
+exports.MainRequestHandler = {
     canHandle(handlerInput) {
         return ask_sdk_core_1.getRequestType(handlerInput.requestEnvelope) === 'MainRequest';
     },

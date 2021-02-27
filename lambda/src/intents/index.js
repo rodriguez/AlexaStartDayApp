@@ -15,3 +15,4 @@ __exportStar(require("./Help"), exports);
 __exportStar(require("./CancelAndStop"), exports);
 __exportStar(require("./SessionEnded"), exports);
 __exportStar(require("./IntentReflector"), exports);
+__exportStar(require("./Main"), exports);

@@ -12,6 +12,6 @@ const errors_1 = require("./src/errors");
 // payloads to the handlers above. Make sure any new handlers or interceptors you've
 // defined are included below. The order matters - they're processed top to bottom.
 exports.handler = ask_sdk_core_1.SkillBuilders.custom()
-    .addRequestHandlers(intents_1.LaunchRequestHandler, intents_1.HelpIntentHandler, intents_1.CancelAndStopIntentHandler, intents_1.SessionEndedRequestHandler, intents_1.IntentReflectorHandler)
+    .addRequestHandlers(intents_1.LaunchRequestHandler, intents_1.MainRequestHandler, intents_1.HelpIntentHandler, intents_1.CancelAndStopIntentHandler, intents_1.SessionEndedRequestHandler, intents_1.IntentReflectorHandler)
     .addErrorHandlers(errors_1.GenericErrorHandler)
     .lambda();

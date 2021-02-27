@@ -3,3 +3,4 @@ export * from "./Help";
 export * from "./CancelAndStop";
 export * from "./SessionEnded";
 export * from "./IntentReflector";
+export * from "./Main";

@@ -8,6 +8,7 @@ import {
 } from 'ask-sdk-core';
 import { 
     LaunchRequestHandler, 
+    MainRequestHandler,
     HelpIntentHandler, 
     CancelAndStopIntentHandler, 
     SessionEndedRequestHandler,
@@ -23,6 +24,7 @@ import {
 export const handler: LambdaHandler = SkillBuilders.custom()
     .addRequestHandlers(
         LaunchRequestHandler,
+        MainRequestHandler,
         HelpIntentHandler,
         CancelAndStopIntentHandler,
         SessionEndedRequestHandler,

@@ -6,7 +6,7 @@ import {
 
 import axios, { AxiosResponse } from 'axios';
 
-export const Main: RequestHandler = {
+export const MainRequestHandler: RequestHandler = {
     canHandle(handlerInput: HandlerInput) {
         return getRequestType(handlerInput.requestEnvelope) === 'MainRequest';
     },
