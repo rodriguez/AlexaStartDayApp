@@ -29,6 +29,13 @@
           ]
         },
         {
+          "name": "MainIntent",
+          "slots": [],
+          "samples": [
+            "what can I do?"
+          ]
+        }
+        {
           "name": "AMAZON.NavigateHomeIntent",
           "samples": []
         }
